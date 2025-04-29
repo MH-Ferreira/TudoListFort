@@ -1,0 +1,11 @@
+# Usar uma imagem base com Java 17
+FROM openjdk:17-jdk-slim
+ 
+# Criar e usar o diretório de trabalho
+WORKDIR /app
+ 
+# Copiar o arquivo JAR para o contêiner
+COPY target/*.jar app.jar
+ 
+# Comando para rodar o JAR
+CMD ["java", "-jar", "app.jar"]
